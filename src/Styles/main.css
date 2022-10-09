@@ -1,0 +1,107 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab|Open+Sans:400italic,700italic,400,700);
+.navbar {
+  width: 100%;
+  height: 70px;
+  background-color: #333;
+  color: rgb(64, 187, 187);
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+.navbar .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.navbar .nav-links {
+  width: 40%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+  font-family: "Roboto Slab", serif;
+}
+.navbar .nav-links .nav-link {
+  text-decoration: none;
+  color: rgb(64, 187, 187);
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+.navbar .nav-links .nav-link:hover {
+  color: #f1f1f1;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto Slab", serif;
+  background-color: #f1f1f1;
+  color: rgb(64, 187, 187);
+}
+body .container {
+  width: 80%;
+  margin: auto;
+  padding: 90px;
+}
+body .container .title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  font-family: "Roboto Slab", serif;
+}
+body .container .subtitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  font-family: "Open Sans", sans-serif;
+}
+body .container .text {
+  font-size: 1.2rem;
+  font-family: "Open Sans", sans-serif;
+}
+
+.product {
+  display: flex;
+  width: 75%;
+  margin: 10px;
+  padding: 10px;
+  flex-direction: column;
+  border: 2px solid #333;
+}
+.product-description {
+  width: 70%;
+  padding: 10px;
+  font-size: 1rem;
+  font-family: "Open Sans", sans-serif;
+}
+.product-description .product-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-family: "Roboto Slab", serif;
+}
+.product-description .product-price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-family: "Open Sans", sans-serif;
+}
+.product-button {
+  background-color: #333;
+  padding: 20px;
+  color: rgb(64, 187, 187);
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+.product-image {
+  width: 100%;
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-bottom: 20px;
+}/*# sourceMappingURL=main.css.map */
