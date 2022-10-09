@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import axios from "axios";
+import { useState, useEffect } from "react";
+import List from "./Components/List";
+import Navbar from "./Components/Navbar";
 
 function App() {
+  const [allProducts, setAllProducts] = useState([]);
+
+  useEffect(() => {
+    console.log("effect");
+    axios.get("https://frend.rest/case/products").then((response) => {
+      console.log("promise fulfilled");
+      setAllProducts(response.data);
+    });
+  }, []);
+
+  console.log(allProducts);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Navbar />
+      <List products={allProducts} />
+    </>
   );
 }
 
