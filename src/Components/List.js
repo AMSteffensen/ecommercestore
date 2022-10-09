@@ -6,8 +6,14 @@ const List = ({ products }) => {
       <ul>
         {products.map((products, i) => (
           <>
-            <li key={i}> {products.name}</li>
-            <img class="product-image" src={products.images[0]}></img>
+            <div class="product" key={i}>
+              <div className="product-description">
+                <h3 class="product-title"> {products.name}</h3>
+                <p class="procut-price">{products.price}</p>
+              </div>
+              <img class="product-image" src={products.images[0]}></img>
+              <button class="product-button">Add to cart</button>
+            </div>
           </>
         ))}
       </ul>

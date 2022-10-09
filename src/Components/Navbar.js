@@ -1,19 +1,27 @@
 import React from "react";
-import "../Styles/Navbar.css";
 
 const Navbar = () => {
   return (
     <>
       <div class="navbar">
+        <div class="logo">
+          <img src="/logo.png" alt="Logo" width="50%" />
+        </div>
         <ul class="nav-links">
           <li>
-            <a class="nav-links">Home</a>
+            <a href="/" class="nav-link">
+              Home
+            </a>
           </li>
           <li>
-            <a class="nav-links">ProductListing</a>
+            <a href="/products" class="nav-link">
+              ProductListing
+            </a>
           </li>
           <li>
-            <a class="nav-links">Cart</a>
+            <a href="/cart" class="nav-link">
+              Cart
+            </a>
           </li>
         </ul>
       </div>

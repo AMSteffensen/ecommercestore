@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import List from "./Components/List";
 import Navbar from "./Components/Navbar";
+import "./Styles/main.css";
 
 function App() {
   const [allProducts, setAllProducts] = useState([]);
@@ -19,7 +20,9 @@ function App() {
   return (
     <>
       <Navbar />
-      <List products={allProducts} />
+      <div className="container">
+        <List products={allProducts} />
+      </div>
     </>
   );
 }
