@@ -1,18 +1,18 @@
 import React from "react";
-
-const List = ({ products }) => {
+import AddToCart from "./AddToCart";
+const List = ({ products, cartItems, setCartItems }) => {
   return (
     <div>
       <ul>
         {products.map((products, i) => (
           <>
-            <div class="product" key={i}>
+            <div className="product" key={i}>
               <div className="product-description">
-                <h3 class="product-title"> {products.name}</h3>
-                <p class="procut-price">{products.price}</p>
+                <h3 className="product-title"> {products.name}</h3>
+                <p className="procut-price">{products.price}</p>
               </div>
-              <img class="product-image" src={products.images[0]}></img>
-              <button class="product-button">Add to cart</button>
+              <img className="product-image" src={products.images[0]}></img>
+              <AddToCart setCartItems={setCartItems} cartItems={cartItems} />
             </div>
           </>
         ))}

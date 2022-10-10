@@ -1,27 +1,26 @@
 import React from "react";
+import Cart from "./Cart";
 
-const Navbar = () => {
+const Navbar = ({ cartItems }) => {
   return (
     <>
-      <div class="navbar">
-        <div class="logo">
+      <div className="navbar">
+        <div className="logo">
           <img src="/logo.png" alt="Logo" width="50%" />
         </div>
-        <ul class="nav-links">
+        <ul className="nav-links">
           <li>
-            <a href="/" class="nav-link">
+            <a href="/" className="nav-link">
               Home
             </a>
           </li>
           <li>
-            <a href="/products" class="nav-link">
+            <a href="/products" className="nav-link">
               ProductListing
             </a>
           </li>
           <li>
-            <a href="/cart" class="nav-link">
-              Cart
-            </a>
+            <Cart cartItems={cartItems} />
           </li>
         </ul>
       </div>

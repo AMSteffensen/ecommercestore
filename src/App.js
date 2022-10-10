@@ -6,6 +6,7 @@ import "./Styles/main.css";
 
 function App() {
   const [allProducts, setAllProducts] = useState([]);
+  const [cartItems, setCartItems] = useState([]);
 
   useEffect(() => {
     console.log("effect");
@@ -15,13 +16,15 @@ function App() {
     });
   }, []);
 
-  console.log(allProducts);
-
   return (
     <>
-      <Navbar />
+      <Navbar cartItems={cartItems} />
       <div className="container">
-        <List products={allProducts} />
+        <List
+          products={allProducts}
+          setCartItems={setCartItems}
+          cartItems={cartItems}
+        />
       </div>
     </>
   );
