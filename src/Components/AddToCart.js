@@ -1,7 +1,6 @@
 import React from "react";
 
 const AddToCart = ({ cartItems, setCartItems }) => {
-  console.log(cartItems);
   return (
     <div>
       <button

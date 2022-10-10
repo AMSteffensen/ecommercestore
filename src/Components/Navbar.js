@@ -15,11 +15,6 @@ const Navbar = ({ cartItems }) => {
             </a>
           </li>
           <li>
-            <a href="/products" className="nav-link">
-              ProductListing
-            </a>
-          </li>
-          <li>
             <Cart cartItems={cartItems} />
           </li>
         </ul>
