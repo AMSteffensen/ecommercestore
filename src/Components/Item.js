@@ -1,9 +1,20 @@
 import React from "react";
-import AddToCart from "./AddToCart";
+import { Link } from "react-router-dom";
 
-const Item = ({ name, category, setCartItems, cartItems, price, images }) => {
+const Item = ({
+  name,
+  category,
+  setCartItems,
+  setOpenCart,
+  cartItems,
+  cart,
+  price,
+  images,
+  id,
+  addToCart,
+}) => {
   return (
-    <div>
+    <div key={id}>
       <div className="product">
         <div className="product-description">
           <h3 className="product-title"> {name}</h3>
@@ -11,7 +22,17 @@ const Item = ({ name, category, setCartItems, cartItems, price, images }) => {
           <p className="procut-category">{category}</p>
         </div>
         <img className="product-image" src={images[0]}></img>
-        <AddToCart setCartItems={setCartItems} cartItems={cartItems} />
+        <button
+          className="product-button"
+          onClick={() => {
+            addToCart(
+              { name, category, price, images, id },
+              setCartItems(cartItems + 1)
+            );
+          }}
+        >
+          Add to cart
+        </button>
       </div>
     </div>
   );

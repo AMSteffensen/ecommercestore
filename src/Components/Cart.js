@@ -2,11 +2,18 @@ import React from "react";
 
 import { AiFillShopping } from "react-icons/ai";
 
-const Cart = ({ cartItems }) => {
+const Cart = ({ cart, setOpenCart }) => {
   return (
-    <div>
-      {cartItems.length} <AiFillShopping />
-    </div>
+    <>
+      <button
+        className="open-modal-btn"
+        onClick={() => {
+          setOpenCart(true);
+        }}
+      >
+        {cart.length} <AiFillShopping />
+      </button>
+    </>
   );
 };
 

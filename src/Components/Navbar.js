@@ -1,7 +1,7 @@
 import React from "react";
 import Cart from "./Cart";
 
-const Navbar = ({ cartItems }) => {
+const Navbar = ({ cart, setOpenCart, cartItems }) => {
   return (
     <>
       <div className="navbar">
@@ -15,7 +15,7 @@ const Navbar = ({ cartItems }) => {
             </a>
           </li>
           <li>
-            <Cart cartItems={cartItems} />
+            <Cart cartItems={cartItems} setOpenCart={setOpenCart} cart={cart} />
           </li>
         </ul>
       </div>

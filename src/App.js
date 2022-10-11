@@ -1,7 +1,9 @@
 import axios from "axios";
 import { useState, useEffect, useMemo } from "react";
+
 import Navbar from "./Components/Navbar";
 import Item from "./Components/Item";
+import Modal from "./Components/Modal";
 import "./Styles/main.css";
 
 function App() {
@@ -9,6 +11,8 @@ function App() {
   const [cartItems, setCartItems] = useState([]);
   const [sortList, setSortList] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState();
+  const [openCart, setOpenCart] = useState(false);
+  const [cart, setCart] = useState([]);
 
   useEffect(() => {
     axios.get("https://frend.rest/case/products").then((response) => {
@@ -37,9 +41,14 @@ function App() {
     setSelectedCategory(event.target.value);
   };
 
+  const addToCart = (el) => {
+    setCart([...cart, el]);
+    console.log(cart);
+  };
+
   return (
     <>
-      <Navbar cartItems={cartItems} />
+      <Navbar cartItems={cartItems} setOpenCart={setOpenCart} cart={cart} />
       <div className="container">
         <div className="filter-container">
           <div>Filter by Category:</div>
@@ -58,16 +67,23 @@ function App() {
             </select>
           </div>
         </div>
-        {filteredList.map((products, index) => (
-          <Item
-            products={allProducts}
-            setCartItems={setCartItems}
-            cartItems={cartItems}
-            {...products}
-            key={index}
-          />
+        {filteredList.map((products) => (
+          <>
+            <Item
+              setCartItems={setCartItems}
+              setOpenCart={setOpenCart}
+              cart={cart}
+              addToCart={addToCart}
+              addTocart={setCart}
+              cartItems={cartItems}
+              {...products}
+            />
+          </>
         ))}
       </div>
+      {openCart && (
+        <Modal setCart={setCart} cart={cart} closeModal={setOpenCart} />
+      )}
     </>
   );
 }
