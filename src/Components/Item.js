@@ -1,13 +1,18 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Routes, Route, Link } from "react-router-dom";
 
+import ProductDetails from "./ProductDetails";
 const Item = ({
   name,
   category,
   setCartItems,
   setOpenCart,
+  setOpenDetails,
   cartItems,
   cart,
+  clickedItem,
+  setClickedItem,
+  products,
   price,
   images,
   id,
@@ -32,6 +37,17 @@ const Item = ({
           }}
         >
           Add to cart
+        </button>
+
+        {id}
+        <button
+          className="open-modal-btn"
+          onClick={() => {
+            setOpenDetails(true);
+            setClickedItem(id);
+          }}
+        >
+          More details
         </button>
       </div>
     </div>

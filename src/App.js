@@ -1,10 +1,12 @@
 import axios from "axios";
 import { useState, useEffect, useMemo } from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 import Navbar from "./Components/Navbar";
 import Item from "./Components/Item";
 import Modal from "./Components/Modal";
 import "./Styles/main.css";
+import ProductDetails from "./Components/ProductDetails";
 
 function App() {
   const [allProducts, setAllProducts] = useState([]);
@@ -12,7 +14,9 @@ function App() {
   const [sortList, setSortList] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState();
   const [openCart, setOpenCart] = useState(false);
+  const [openDetails, setOpenDetails] = useState(false);
   const [cart, setCart] = useState([]);
+  const [clickedItem, setClickedItem] = useState([]);
 
   useEffect(() => {
     axios.get("https://frend.rest/case/products").then((response) => {
@@ -43,7 +47,6 @@ function App() {
 
   const addToCart = (el) => {
     setCart([...cart, el]);
-    console.log(cart);
   };
 
   return (
@@ -73,8 +76,11 @@ function App() {
               setCartItems={setCartItems}
               setOpenCart={setOpenCart}
               cart={cart}
+              setOpenDetails={setOpenDetails}
               addToCart={addToCart}
               addTocart={setCart}
+              clickedItem={clickedItem}
+              setClickedItem={setClickedItem}
               cartItems={cartItems}
               {...products}
             />
@@ -83,6 +89,13 @@ function App() {
       </div>
       {openCart && (
         <Modal setCart={setCart} cart={cart} closeModal={setOpenCart} />
+      )}
+      {openDetails && (
+        <ProductDetails
+          clickedItem={clickedItem}
+          cart={cart}
+          closeModal={setOpenDetails}
+        />
       )}
     </>
   );

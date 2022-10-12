@@ -2,7 +2,6 @@ import React from "react";
 import "../Styles/Modal.css";
 
 const Modal = ({ cart, setCart, closeModal }) => {
-  console.log(cart);
   const removeFromCart = (el) => {
     let hardCopy = [...cart];
     hardCopy = hardCopy.filter((cartItem) => cartItem.id !== el.id);
@@ -22,10 +21,10 @@ const Modal = ({ cart, setCart, closeModal }) => {
             <button onClick={() => closeModal(false)}> X </button>
           </div>
           <div className="modal-title">
-            <h1>Product details</h1>
+            <h1>Shopping cart</h1>
           </div>
           <div className="modal-body">
-            <p>Product description</p>
+            <p>Shopping items</p>
             {cartItems}
           </div>
           <div className="modal-footer">
