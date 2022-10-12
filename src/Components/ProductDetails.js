@@ -37,15 +37,17 @@ const ProductDetails = ({ cart, setCart, clickedItem, closeModal }) => {
             <h1>{spesificProduct.name}</h1>
           </div>
           <div className="modal-body">
-            <p>Product description</p>
-            {spesificProduct.description}
-            <ul>
-              <li> {spesificProduct.price}</li>
-            </ul>
+            <p>{spesificProduct.description}</p>
+            <p>{spesificProduct.price}</p>
             {sizeToggle}
           </div>
           <div className="modal-footer">
-            <button onClick={() => closeModal(false)}>Cancel</button>
+            <button
+              className="modal-footer-cancelBtn"
+              onClick={() => closeModal(false)}
+            >
+              Cancel
+            </button>
             <button>Continue</button>
           </div>
         </div>

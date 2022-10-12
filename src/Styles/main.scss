@@ -39,7 +39,6 @@ body {
     flex-direction: column;
     border: 2px solid #333;
 
-
     &-description {
         width: 70%;
         padding: 10px;
@@ -60,12 +59,19 @@ body {
             font-family: $secondary-font;
         }
     }
-    &-button {
+    &-button-primary {
         background-color: $primary-color;
         padding: 20px;
         color: $secondary-color;
         font-weight: bold;
         font-size: 1.2rem;
+    }
+
+    &-button-secondary {
+        background-color: $secondary-color;
+        padding: 10px;
+        color: $primary-color;
+        font-size: 0.8rem;
     }
 
     &-image {

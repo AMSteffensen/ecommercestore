@@ -28,7 +28,7 @@ const Item = ({
         </div>
         <img className="product-image" src={images[0]}></img>
         <button
-          className="product-button"
+          className="product-button-primary"
           onClick={() => {
             addToCart(
               { name, category, price, images, id },
@@ -38,10 +38,8 @@ const Item = ({
         >
           Add to cart
         </button>
-
-        {id}
         <button
-          className="open-modal-btn"
+          className="product-button-secondary"
           onClick={() => {
             setOpenDetails(true);
             setClickedItem(id);

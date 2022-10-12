@@ -36,14 +36,69 @@
   color: #f1f1f1;
 }
 
+.modal-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  font-family: "Roboto Slab", serif;
+}
+.modal-container {
+  width: 500px;
+  height: 500px;
+  border-radius: 10px;
+  background-color: #333;
+  box-shadow: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.modal-body {
+  padding: 1em;
+  text-align: center;
+}
 .modal-background {
   width: 100vw;
   height: 100vh;
-  background-color: rgba(234, 230, 230, 0.5);
+  background-color: rgba(0, 0, 0, 0.5);
   position: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1;
+  top: 0;
+}
+.modal-closeBtn {
+  background-color: transparent;
+  border: none;
+  font-size: 25px;
+  cursor: pointer;
+}
+.modal-footer {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  padding: 1em;
+}
+.modal-footer-cancelBtn {
+  background-color: #333;
+  color: rgb(64, 187, 187);
+  font-size: 20px;
+  cursor: pointer;
+}
+.modal-footer-cancelBtn:hover {
+  background-color: rgba(220, 14, 14, 0.343);
+  color: #333;
+  border: 1px solid red;
+}
+.modal-footer button:nth-child(2) {
+  font-size: 25px;
+  background-color: rgb(64, 187, 187);
+  cursor: pointer;
+}
+.modal-footer button:nth-child(2):hover {
+  background-color: #333;
+  color: rgb(64, 187, 187);
+  border: 1px solid blue;
 }
 
 body {
@@ -101,12 +156,18 @@ body .container .text {
   margin-bottom: 10px;
   font-family: "Open Sans", sans-serif;
 }
-.product-button {
+.product-button-primary {
   background-color: #333;
   padding: 20px;
   color: rgb(64, 187, 187);
   font-weight: bold;
   font-size: 1.2rem;
+}
+.product-button-secondary {
+  background-color: rgb(64, 187, 187);
+  padding: 10px;
+  color: #333;
+  font-size: 0.8rem;
 }
 .product-image {
   width: 100%;

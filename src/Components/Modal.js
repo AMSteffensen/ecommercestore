@@ -17,9 +17,9 @@ const Modal = ({ cart, setCart, closeModal }) => {
     <div className="modal">
       <div className="modal-background">
         <div className="modal-container">
-          <div className="modal-closeBtn">
-            <button onClick={() => closeModal(false)}> X </button>
-          </div>
+          <button className="modal-closeBtn" onClick={() => closeModal(false)}>
+            X
+          </button>
           <div className="modal-title">
             <h1>Shopping cart</h1>
           </div>
@@ -28,7 +28,12 @@ const Modal = ({ cart, setCart, closeModal }) => {
             {cartItems}
           </div>
           <div className="modal-footer">
-            <button onClick={() => closeModal(false)}>Cancel</button>
+            <button
+              className="modal-footer-cancelBtn"
+              onClick={() => closeModal(false)}
+            >
+              Cancel
+            </button>
             <button>Continue</button>
           </div>
         </div>
